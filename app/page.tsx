@@ -384,7 +384,7 @@ export default function Home() {
         >
           <div className="font-mono text-neon-green opacity-30">
             <p>// Code snippets scrolling across the screen...</p>
-            <p>// Example: console.log('Hello, world!')</p>
+            <p>// Example: console.log(&apos;Hello, world!')</p>
             <p>// Optimizing algorithms and writing clean code...</p>
           </div>
         </div>
