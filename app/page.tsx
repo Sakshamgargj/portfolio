@@ -489,18 +489,6 @@ export default function Home() {
                 Ready to collaborate and bring visionary ideas to life? Let&apos;s make it happen <span className="text-yellow-300">🚀</span>
               </p>
 
-              {/* Call to Action */}
-              {/* <p className="text-gray-300 text-lg leading-relaxed">
-                Feel free to reach out to me on{" "}
-                <LinkPreview
-                  url="https://discord.gg/WgfqpPRn"
-                  className="font-bold"
-                >
-                  <PiDiscordLogoFill className="h-6 w-6 inline text-indigo-500" />
-                  <span className="text-indigo-500 underline"> Discord</span>
-                </LinkPreview>{" "}
-                — I&apos;m always happy to help!
-              </p> */}
             </div>
 
           </div>
