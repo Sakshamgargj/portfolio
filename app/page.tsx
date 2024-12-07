@@ -203,47 +203,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <motion.div
-          animate={isHidden ? 'hidden' : 'visible'}
-          whileHover='visible'
-          onFocusCapture={() => setIsHidden(false)}
-          variants={{
-            hidden: {
-              y: '-90%'
-            },
-            visible: {
-              y: '0%'
-            }
-          }}
-          transition={{ duration: 0.2 }}
-          className="fixed top-0 z-10 md:flex w-full justify-center pt-3 hidden"
-        >
-          <div className="flex text-white gap-x-4 p-4 items-center rounded-xl">
-            {navbar.map((item) => (
-              <ScrollLink
-                key={item.title}
-                to={item.link}
-                smooth={true}
-                duration={500}
-                className='border bg-white/60 text-green-950 px-4 py-3 rounded-xl font-bold text-center flex
-               items-center justify-center
-                cursor-pointer hover:bg-white/80'>
-                {item.title}
-              </ScrollLink>
-            ))}
-
-            <Dialog>
-              <DialogTrigger className="border bg-white/60 text-green-950 px-4 py-3 rounded-xl 
-              text-center flex items-center justify-center
-               cursor-pointer hover:bg-white/80">Contact</DialogTrigger>
-              <DialogContent>
-                <InlineWidget url="" />
-              </DialogContent>
-            </Dialog>
-          </div>
-        </motion.div> */}
-
-
         <motion.div
           initial="visible"
           animate={isHidden ? 'hidden' : 'visible'}
@@ -303,7 +262,6 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        {/* Show/Hide Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: isHidden ? 1 : 0 }}
@@ -364,12 +322,6 @@ export default function Home() {
                 </h1>
               </div>
 
-              {/* <p className="text-gray-300 text-lg leading-relaxed pb-8">
-                An ambitious creator and dedicated problem-solver, fueled by the passion to transform ideas into groundbreaking solutions.
-                With a blend of creativity, perseverance, and an unwavering drive for excellence, I strive to leave a meaningful impact on every project.
-                Ready to collaborate and bring visionary ideas to life? Let&apos;s make it happen <span className="text-yellow-300">🚀</span>
-              </p> */}
-
             </div>
 
           </div>
@@ -406,7 +358,6 @@ export default function Home() {
                       className="group"
                     >
                       <div className="relative">
-                        {/* Gradient border effect */}
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500/50 via-green-500/25 to-gray-800/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
 
                         <div className="relative rounded-2xl p-4 bg-gray-900 border border-gray-800 group-hover:border-gray-700 transition-all duration-300">
@@ -446,7 +397,6 @@ export default function Home() {
                 </motion.div>
               </motion.div>
 
-              {/* Background decoration */}
               <div className="absolute -z-10 inset-0">
                 <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-green-500/5 to-transparent" />
                 <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-green-500/5 to-transparent" />
@@ -571,48 +521,6 @@ export default function Home() {
             </div>
           </Element>
 
-          {/* <div className="py-4">
-            <Element name="skills" className="mt-10 bg-gray-950 rounded-xl py-8 px-4 md:px-6 lg:px-8 skills center-on-phone">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-green-500/10 via-transparent to-transparent opacity-50 blur-3xl" />
-
-                <div className="relative">
-
-                  <h2 className="text-3xl pt-4 font-sans font-bold mb-6">
-                    <span className="text-green-100">Skills</span>
-                    <span className="absolute -mt-1 ml-1 h-3 w-3 rounded-full bg-green-500/30 blur-sm" />
-                  </h2>
-
-                  <div className="space-y-6">
-                    {skills.map((skill) => (
-                      <div
-                        key={skill.title}
-                        className="group rounded-xl border border-gray-800 hover:border-gray-700 bg-gradient-to-br from-gray-900 to-gray-900/50 p-6 transition-all duration-300 hover:shadow-[0_0_30px_-15px_rgba(34,197,94,0.2)]"
-                      >
-                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                          <div className="flex flex-col gap-2">
-                            <h3 className="text-xl font-semibold text-gray-100 group-hover:text-green-400 transition-colors">
-                              {skill.title}
-                            </h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">
-                              {skill.description}
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-green-500/0 via-green-500/50 to-green-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-blue-500/20 blur-3xl opacity-20" />
-              </div>
-            </Element>
-          </div> */}
-
           <Element name="education" className="bg-gray-950 rounded-xl py-8 mt-10 px-4 md:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -672,7 +580,6 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Background decoration */}
             <div className="absolute -z-10 inset-0">
               <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-green-500/5 to-transparent" />
               <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-green-500/5 to-transparent" />
