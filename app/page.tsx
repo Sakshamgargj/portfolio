@@ -505,7 +505,6 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Glow effect */}
                     <div
                       className={`
                     absolute inset-0 rounded-lg transition-opacity duration-300
@@ -541,7 +540,6 @@ export default function Home() {
                     className="group"
                   >
                     <div className="relative">
-                      {/* Gradient border effect */}
                       <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500/50 via-green-500/25 to-gray-800/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
 
                       <div className="relative rounded-2xl p-4 bg-gray-900 border border-gray-800 group-hover:border-gray-700 transition-all duration-300">
