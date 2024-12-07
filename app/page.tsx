@@ -15,6 +15,7 @@ import HireFreelancer from "@/components/ui/hireme";
 import ContactMe from "@/components/ui/hireme";
 import { Calendar, ArrowUpRight } from 'lucide-react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const projects = [
   {
@@ -325,20 +326,43 @@ export default function Home() {
             </div>
 
           </div>
-          <Element name="resume" className="mt-10 resume center-on-phone">
+          <Element name="resume" className="mt-2 lg:px-80  resume center-on-phone">
             <a
               href="https://drive.google.com/file/d/1ixpSa0ON_YTPXqL4Vuy0o4ZSrGgYusn4/view?usp=drivesdk"
-              className="text-xl resumei rounded-xl p-4 bg-gradient-to-r from-blue-400 to-blue-600 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transform transition-transform duration-300 ease-in-out"
+              className="text-xl resumei rounded-xl flex justify-center p-4 bg-gradient-to-r from-green-500 via-green-800 to-green-950 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transform transition-transform duration-300 ease-in-out"
               target="_blank"
               rel="noopener noreferrer"
             >
               Open Resume
             </a>
           </Element>
+          <div className="flex gap-6 justify-center mt-32">
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              href="https://github.com"
+              className="text-white hover:text-green-300"
+            >
+              <Github className="w-8 h-8" />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              href="https://linkedin.com"
+              className="text-white hover:text-green-300"
+            >
+              <Linkedin className="w-8 h-8" />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              href="mailto:contact@example.com"
+              className="text-white hover:text-green-300"
+            >
+              <Mail className="w-8 h-8" />
+            </motion.a>
+          </div>
 
 
           <div className="py-4">
-            <Element name="work" className="mt-28 bg-gray-950 rounded-xl py-8 px-4 md:px-6 lg:px-8">
+            <Element name="work" className="mt-20 bg-gray-950 rounded-xl py-8 px-4 md:px-6 lg:px-8">
               <motion.div
                 initial="hidden"
                 animate="visible"
