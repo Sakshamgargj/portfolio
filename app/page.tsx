@@ -512,7 +512,7 @@ export default function Home() {
             </h2>
           </Element>
 
-          <Element className="mt-10 skills center-on-phone">
+          <Element name="skills" className="mt-10 skills center-on-phone">
             <div className="max-w-4xl mx-auto px-4">
               <motion.div
                 variants={containerVariants}
