@@ -297,7 +297,7 @@ export default function Home() {
           <div className="md:flex md:gap-x-10 items-center md:pt-28">
 
             <div className="px-4 lg:px-10">
-              <h1 className="text-2xl lg:text-5xl text-white text-center font-semibold tracking-wide">Transforming Concepts into Seamless <span style={{ color: "#B6E2CC" }}>User Experiences</span></h1>
+              <h1 className="text-3xl lg:text-5xl text-white text-center font-semibold tracking-wide">Transforming Concepts into Seamless <span style={{ color: "#B6E2CC" }}>User Experiences</span></h1>
 
               <div className="flex gap-4 py-8">
                 <motion.div
@@ -316,7 +316,7 @@ export default function Home() {
                   💻
                 </motion.div>
 
-                <h1 className="text-xl lg:text-4xl text-white font-semibold tracking-wide">
+                <h1 className="text-lg lg:text-4xl text-white font-semibold tracking-wide">
                   <Typewriter
                     words={[
                       "Hello! I'm Saksham Garg, a web developer crafting seamless digital experiences."
@@ -329,7 +329,7 @@ export default function Home() {
             </div>
 
           </div>
-          <Element name="resume" className="mt-2 lg:px-80  resume center-on-phone">
+          <Element name="resume" className=" lg:px-80  resume center-on-phone">
             <a
               href="https://drive.google.com/file/d/1ixpSa0ON_YTPXqL4Vuy0o4ZSrGgYusn4/view?usp=drivesdk"
               className="text-xl resumei rounded-xl flex justify-center p-4 bg-gradient-to-r from-green-500 via-green-800 to-green-950 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transform transition-transform duration-300 ease-in-out"
@@ -339,7 +339,7 @@ export default function Home() {
               Open Resume
             </a>
           </Element>
-          <div className="flex gap-6 justify-center mt-32">
+          <div className="flex gap-6 justify-center md:mt-32">
             <motion.a
               whileHover={{ scale: 1.1 }}
               href="https://github.com/Sakshamgargj"
