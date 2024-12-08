@@ -5,11 +5,11 @@ import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { InlineWidget } from "react-calendly";
 import { Typewriter } from "react-simple-typewriter";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import { Link as ScrollLink, Element } from "react-scroll";
 import ContactMe from "@/components/ui/hireme";
-import { Calendar, ArrowUpRight } from 'lucide-react';
+import { Calendar, ArrowUpRight, Sparkles } from 'lucide-react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Github, Linkedin, Mail } from 'lucide-react';
 
@@ -54,7 +54,7 @@ const experience = [
 
 const education = [
   {
-    title: "Bachelor of Technology, Computer Science Engineering",
+    title: "Bachelor of Technology, Computer Science & Engineering",
     description: "Avg. SGPA-8.10",
     date: "2022-2026",
     image: "/images/miet.jpg",
@@ -63,13 +63,13 @@ const education = [
     title: "XIIth Board Exam",
     description: "91% Marks in PCM+",
     date: "2022",
-    image: "/images/download.jpg",
+    image: "/images/Cbse.png",
   },
   {
     title: "Xth Board Exam",
     description: "88% Marks",
     date: "2020",
-    image: "/images/download.jpg",
+    image: "/images/Cbse.png",
   },
 ];
 
@@ -101,6 +101,8 @@ export default function Home() {
   const { scrollY } = useScroll();
   const lastYRef = useRef(0);
   const [hoveredSkill, setHoveredSkill] = useState("");
+  const [hoveredItem, setHoveredItem] = useState("");
+
   const expertise = [
     { name: 'React Js', color: '#F7DF1E' },
     { name: 'Next Js', color: '#F05032' },
@@ -122,27 +124,6 @@ export default function Home() {
     { name: 'C', color: '#F05032' },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100
-      }
-    }
-  };
 
   useMotionValueEvent(scrollY, 'change', (y) => {
     const difference = y - lastYRef.current;
@@ -157,6 +138,30 @@ export default function Home() {
     console.log('Submitted email:', email);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
 
   return (
     <div>
@@ -211,58 +216,132 @@ export default function Home() {
           initial="visible"
           animate={isHidden ? 'hidden' : 'visible'}
           variants={{
-            hidden: { y: '-100%' },
+            hidden: { y: '-700%' },
             visible: { y: '0%' }
           }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           className="fixed top-0 z-50 w-full justify-center pt-3 hidden md:flex"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.2 }}
-            className="backdrop-blur-md bg-white/10 rounded-3xl p-2 border border-white/20 shadow-lg"
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20
+            }}
+            className="fixed top-6 -translate-x-1/2 z-50"
           >
-            <div className="flex items-center px-6 gap-6">
-              {navbar.map((item) => (
-                <motion.div
-                  key={item.title}
-                  whileHover={{ scale: 1.06 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <ScrollLink
-                    to={item.link}
-                    smooth={true}
-                    duration={500}
-                    className="relative group px-4 py-2 rounded-xl font-medium text-white transition-all duration-300 overflow-hidden"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-emerald-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
-                    <div className="relative z-10 flex items-center gap-1">
-                      {item.title}
-                    </div>
-                    <div className="absolute bottom-0 left-0 h-0.5 w-full bg-gradient-to-r from-green-500 to-emerald-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-                  </ScrollLink>
-                </motion.div>
-              ))}
-
+            <motion.div
+              className="relative backdrop-blur-xl bg-emerald-950/30 border border-emerald-800/30 rounded-2xl shadow-[0_8px_32px_0_rgba(0,255,150,0.1)]"
+              whileHover={{
+                boxShadow: "0 8px 32px 0 rgba(0,255,150,0.2)",
+                transition: { duration: 0.3 }
+              }}
+            >
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.9 }}
-              >
+                className="absolute inset-0 bg-gradient-to-r from-emerald-900/20 to-green-900/20 rounded-2xl opacity-50"
+                animate={{
+                  background: [
+                    "radial-gradient(circle at 0% 0%, rgba(4,120,87,0.1) 0%, transparent 50%)",
+                    "radial-gradient(circle at 100% 100%, rgba(4,120,87,0.1) 0%, transparent 50%)",
+                    "radial-gradient(circle at 0% 0%, rgba(4,120,87,0.1) 0%, transparent 50%)"
+                  ]
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+
+              <div className="relative px-3 py-3 flex items-center gap-2">
+                {navbar.map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    onHoverStart={() => setHoveredItem(item.title)}
+                    onHoverEnd={() => setHoveredItem("")}
+                    className="relative"
+                  >
+                    <ScrollLink
+                      to={item.link}
+                      smooth={true}
+                      duration={700}
+                      className="relative block px-4 py-2 text-emerald-100/90 hover:text-emerald-100 font-medium"
+                    >
+                      <AnimatePresence>
+                        {hoveredItem === item.title && (
+                          <motion.div
+                            className="absolute inset-0 bg-gradient-to-r from-emerald-800/40 to-green-800/40 rounded-xl"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 400,
+                              damping: 30
+                            }}
+                          />
+                        )}
+                      </AnimatePresence>
+                      <motion.span
+                        className="relative z-10 flex items-center gap-2"
+                        whileHover={{ x: 2 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        {item.title}
+                        {hoveredItem === item.title && (
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.1 }}
+                          >
+                            {/* <Sparkles size={14} className="text-emerald-400" /> */}
+                          </motion.div>
+                        )}
+                      </motion.span>
+                      <motion.div
+                        className="absolute bottom-1 left-0 h-0.5 w-full bg-gradient-to-r from-green-500 to-transparent"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: hoveredItem === item.title ? 1 : 0 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                      {/* <div className="absolute -bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-green-500 to-transparent" /> */}
+
+                    </ScrollLink>
+                  </motion.div>
+                ))}
+
                 <Dialog>
-                  <DialogTrigger className="relative group pr-4 py-2 rounded-xl font-medium text-white transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-500/30 to-emerald-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
-                    <div className="relative pl-2 z-10">Contact</div>
-                    <div className="absolute bottom-0 left-0 h-0.5 w-full bg-gradient-to-r from-green-500 to-emerald-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                  <DialogTrigger asChild>
+                    <motion.button
+                      className="relative px-5 py-2 text-emerald-100/90 font-medium rounded-xl overflow-hidden"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-emerald-700/50 to-green-700/50 rounded-xl"
+                        whileHover={{
+                          opacity: [0.5, 0.7, 0.5],
+                          transition: { duration: 2, repeat: Infinity }
+                        }}
+                      />
+                      <motion.div
+                        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(4,120,87,0.3),transparent_60%)]"
+                        style={{ mixBlendMode: "plus-lighter" }}
+                      />
+                      <span className="relative z-10">Contact</span>
+                    </motion.button>
                   </DialogTrigger>
-                  <DialogContent className="bg-gray-900/95 border-gray-800">
-                    <div className="p-4">
+                  <DialogContent className="text-white mt-4 bg-emerald-950/95 border-emerald-900">
+                    <div className="p-6">
+                      <h2 className="text-2xl font-bold text-emerald-50">Contact Me</h2>
                       <InlineWidget url="" />
                     </div>
                   </DialogContent>
                 </Dialog>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
 
@@ -506,19 +585,19 @@ export default function Home() {
 
 
           <Element name="skills">
-            <h2 className="text-3xl pt-10 text-green-100 font-sans font-bold relative inline-block">
+            <h2 className="text-3xl pt-10 skills text-green-100 font-sans font-bold relative inline-block">
               Technical Expertise
               <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-green-500/50 to-transparent" />
             </h2>
           </Element>
 
-          <Element name="skills" className="mt-10 skills center-on-phone">
+          <Element name="skillss" className="mt-10 skills center-on-phone">
             <div className="max-w-4xl mx-auto px-4">
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+                className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-4"
               >
                 {expertise.map((skill, index) => (
                   <motion.div
@@ -608,7 +687,7 @@ export default function Home() {
 
                       {/* Text Content */}
                       <div className="flex-1">
-                        <h3 className="text-2xl font-semibold text-gray-100 group-hover:text-green-400 transition-colors">
+                        <h3 className=" text-lg md:text-2xl font-semibold text-gray-100 group-hover:text-green-400 transition-colors">
                           {item.title}
                         </h3>
                         <p className="text-sm text-gray-400 mt-2">{item.description}</p>
