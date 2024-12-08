@@ -19,34 +19,31 @@ const ContactMe: React.FC = () => {
 
   return (
     <div className="contact-container">
-      {/* "Contact Me" button */}
       <button
         className="contact-button"
         onClick={toggleContactBox}
       >
-        Contact Me
+        Get in Touch
       </button>
 
-      {/* Contact details section (WhatsApp, Email) */}
       {isOpen && (
         <div className="contact-details ">
           <h3>Transform Your Vision into Reality | Work with Me!</h3>
           <p>Have a project in mind? I’m just a message away to help you get started.</p>
-          <div className="contact-actions">
-            <button onClick={handleWhatsAppClick}>Chat on WhatsApp</button>
-            <button onClick={handleEmailClick}>Write me a mail</button>
+          <div className="contact-actions flex justify-between">
+            <button onClick={handleWhatsAppClick}>WhatsApp</button>
+            <button onClick={handleEmailClick}>Send Mail</button>
           </div>
         </div>
       )}
 
-      {/* Styling */}
       <style jsx>{`
         /* Container Styling */
         .contact-container {
           position: fixed;
           bottom: 20px;
           right: 20px;
-          z-index: 1000;
+          z-index: 1;
         }
 
         /* Contact Button */

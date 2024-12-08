@@ -5,13 +5,9 @@ import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { InlineWidget } from "react-calendly";
 import { Typewriter } from "react-simple-typewriter";
-import { LinkPreview } from "@/components/ui/link-preview";
-import { PiDiscordLogoFill, PiYoutubeLogoFill } from "react-icons/pi";
-import { color, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import { Link as ScrollLink, Element } from "react-scroll";
-import IconCloud from "@/components/ui/icon-cloud";
-import HireFreelancer from "@/components/ui/hireme";
 import ContactMe from "@/components/ui/hireme";
 import { Calendar, ArrowUpRight } from 'lucide-react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
@@ -20,30 +16,36 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 const projects = [
   {
     title: "E-Commerce",
-    description: "E-commerce platform for digital products",
+    description: "E-Commerce a fully responsive, high-performance, scalable platform using modern web technologies, provides a seamless shopping experience for users to browse, book, and manage categories of products effortlessly. Focused highly on efficient e-commerce platform that increased the clients online sales and enhanced user engagement.",
     link: "https://ventesinfotech-wqb5.vercel.app/",
+    techUsed: "Next JS, React Redux, Tailwind CSS, Node.js, Express.js,Multer, MongoDB, Mongoose",
+    github: "https://github.com/Sakshamgargj/ventesinfotech",
     date: "2024",
-    image: "/images/uploadify.png",
+    video: "/video/eCommerce.mp4",
   },
   {
     title: "Hotel/Resort Application",
-    description: "Digital platform for online hotel/resort booking",
-    link: "https://car-rental-frontend-swart.vercel.app/",
+    description: "A comprehensive digital platform designed to revolutionize the Hotel/Resort booking experience. This application enables users to browse, search, and book accommodations seamlessly, providing an intuitive interface and smooth user experience.  The platform is built with scalability in mind, making it ideal for both small and large hospitality businesses. It also features a responsive design, ensuring accessibility across all devices, including desktops, tablets, and smartphones.",
+    link: "",
+    techUsed: "Next Js, Redux,Tailwind CSS, Javascript",
+    github: "https://github.com/Sakshamgargj/hotel_mangement",
     date: "2024",
-    image: "/images/uploadify.png",
+    video: "/video/hotelSystem.mp4",
   },
   {
     title: "Car Rental",
-    description: "Digital platform for online car booking",
+    description: "Car Rental a fully responsive, user-friendly website using modern web technologies, enabling users to browse, book, and manage car rentals effortlessly. Focused on intuitive design and fast load times to enhance user satisfaction and retention.",
     link: "https://car-rental-frontend-swart.vercel.app/",
+    techUsed: "React, React Redux,HTML5, CSS, JavaScript, Bootstrap,Node.js, Express.js,MongoDB,Mongoose",
+    github: "https://github.com/Sakshamgargj/CarRental",
     date: "2024",
-    image: "/images/uploadify.png",
+    video: "/video/carRental.mp4",
   }
 ];
 
 const experience = [
   {
-    title: "Full Stack Developer | Intern",
+    title: "Full Stack Developer | Paid Internship",
     description: "MysticGrafix",
     date: "Sept 2024 - Present",
     image: "/images/mysticgrafix.jpg",
@@ -74,13 +76,14 @@ const education = [
 
 const navbar = [
   {
-    title: "Projects",
-    link: "projects",
-  },
-  {
     title: "Experience",
     link: "work",
   },
+  {
+    title: "Projects",
+    link: "projects",
+  },
+
   {
     title: "Skills",
     link: "skills",
@@ -339,21 +342,21 @@ export default function Home() {
           <div className="flex gap-6 justify-center mt-32">
             <motion.a
               whileHover={{ scale: 1.1 }}
-              href="https://github.com"
+              href="https://github.com/Sakshamgargj"
               className="text-white hover:text-green-300"
             >
               <Github className="w-8 h-8" />
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1 }}
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/saksham-garg-aa5932313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
               className="text-white hover:text-green-300"
             >
               <Linkedin className="w-8 h-8" />
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1 }}
-              href="mailto:contact@example.com"
+              href="mailto:gargsaksham092@gmail.com"
               className="text-white hover:text-green-300"
             >
               <Mail className="w-8 h-8" />
@@ -362,70 +365,70 @@ export default function Home() {
 
 
           <div className="py-4">
-            <Element name="work" className="mt-20 bg-gray-950 rounded-xl py-8 px-4 md:px-6 lg:px-8">
+            <Element name="work" className="mt-20 bg-gray-950 rounded-xl py-12 px-6 md:px-8 lg:px-10">
               <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
               >
-                <h2 className="text-3xl pt-4 text-green-100 font-sans font-bold relative inline-block">
+                {/* Header */}
+                <h2 className="text-4xl font-bold text-green-100 relative inline-block">
                   Work Experience
-                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-green-500/50 to-transparent" />
+                  <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-green-500 to-transparent" />
                 </h2>
 
-                <motion.div className="mt-6 space-y-4">
+                {/* Experience Cards */}
+                <motion.div className="mt-8 grid grid-cols-1 md:grid-cols-1 gap-6">
                   {experience.map((item, index) => (
                     <motion.div
                       key={item.title}
                       variants={itemVariants}
                       whileHover={{ scale: 1.02 }}
-                      className="group"
+                      className="group relative border border-gray-800 hover:border-gray-700 rounded-2xl bg-gray-900 p-6 transition-all duration-300"
                     >
-                      <div className="relative">
-                        <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500/50 via-green-500/25 to-gray-800/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+                      {/* Gradient Effect */}
+                      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-green-500/10 via-gray-900/5 to-gray-800 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-lg"></div>
 
-                        <div className="relative rounded-2xl p-4 bg-gray-900 border border-gray-800 group-hover:border-gray-700 transition-all duration-300">
-                          <div className="md:flex justify-between items-center gap-4">
-                            <div className="flex items-center gap-x-4">
-                              <div className="relative">
-                                <Image
-                                  src={item.image}
-                                  alt={item.title}
-                                  width={100}
-                                  height={100}
-                                  className="rounded-md w-30 h-20 object-cover transition-transform duration-300 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-green-500/10 rounded-md opacity-0 group-hover:opacity-100 transition-opacity" />
-                              </div>
-
-                              <div className="flex flex-col">
-                                <h2 className="text-xl font-semibold text-gray-100 group-hover:text-green-400 transition-colors mt-4 md:mt-0">
-                                  {item.title}
-                                </h2>
-                                <p className="text-gray-400 py-2">
-                                  {item.description}
-                                </p>
-                              </div>
-                            </div>
-
-
-                          </div>
-                          <div className="flex justify-end py-2 items-center gap-2 text-gray-400 mt-4 md:mt-0">
-                            <Calendar className="w-4 h-4" />
-                            <span className="text-sm">{item.date}</span>
-                          </div>
+                      {/* Card Content */}
+                      <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6">
+                        {/* Image */}
+                        <div className="relative">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            width={120}
+                            height={80}
+                            className="rounded-lg object-cover w-30 h-20 group-hover:scale-105 transition-transform duration-300"
+                          />
+                          <div className="absolute inset-0 bg-green-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
                         </div>
+
+                        {/* Text Content */}
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-semibold text-gray-100 group-hover:text-green-400 transition-colors">
+                            {item.title}
+                          </h3>
+                          <p className="text-sm text-gray-400 mt-2">{item.description}</p>
+                        </div>
+                      </div>
+
+                      {/* Footer */}
+                      <div className="mt-4 flex items-center text-gray-400 text-sm">
+                        <Calendar className="w-5 h-5 mr-2" />
+                        <span>{item.date}</span>
                       </div>
                     </motion.div>
                   ))}
                 </motion.div>
               </motion.div>
 
+              {/* Background Effects */}
               <div className="absolute -z-10 inset-0">
-                <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-green-500/5 to-transparent" />
-                <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-green-500/5 to-transparent" />
+                <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-green-500/10 to-transparent" />
+                <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-green-500/10 to-transparent" />
               </div>
             </Element>
+
           </div>
 
           <Element name="projects" className="bg-gray-950 rounded-xl p-8 md:px-6 lg:px-8">
@@ -435,50 +438,72 @@ export default function Home() {
               <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-green-500/50 to-transparent" />
             </h2>
 
-
-            <div className="grid grid-cols-1 rounded-xl md:grid-cols-2 gap-4 mt-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
               {projects.map((project) => (
-                <a
-                  href={project.link}
+                <div
                   key={project.title}
-                  className="group border border-gray-800 hover:border-gray-700 rounded-xl py-8 px-4 bg-gray-900 transition-all duration-300"
+                  className="group border border-gray-800 hover:border-gray-700 rounded-lg p-4 bg-gray-900 transition-all duration-300"
                 >
-                  <div className="md:flex items-center justify-between">
-                    <div className="md:flex items-center gap-x-4">
-                      <div className="relative">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          width={100}
-                          height={100}
-                          className="rounded-md w-20 h-20 object-cover group-hover:ring-2 ring-green-500/30 transition-all"
-                        />
-                        <div className="absolute inset-0 bg-green-500/10 rounded-md opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </div>
-
-                      <div className="flex flex-col mt-3 md:mt-0">
-                        <h2 className="text-xl pt-4 font-semibold text-gray-100 group-hover:text-green-400 transition-colors">
-                          {project.title}
-                        </h2>
-                        <p className="text-gray-400 py-2 text-md">
-                          {project.description}
-                        </p>
-                      </div>
-                    </div>
-
-
+                  {/* Video Section */}
+                  <div className="relative mb-4">
+                    <video
+                      src={project.video}
+                      loop
+                      autoPlay
+                      muted
+                      playsInline
+                      className="w-full h-48 rounded-md object-cover group-hover:ring-2 hover:scale-105 ring-green-500/30 transition-all"
+                    />
                   </div>
-                  <div className="flex justify-end items-center gap-2 mt-2 pt-2 md:mt-0">
-                    <div className="flex items-center text-gray-400 text-sm">
-                      <Calendar className="w-4 h-4 mr-1" />
-                      {project.date}
-                    </div>
-                    <ArrowUpRight className="w-4 h-4 text-gray-400 hover:text-green-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                  {/* Project Details */}
+                  <div className="flex justify-between">
+                    <h3 className="text-2xl font-semibold text-gray-100 group-hover:text-green-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-500 mt-1 p-2 text-xs">{project.date}</p>
                   </div>
-                </a>
+
+                  <p className="text-gray-400 mt-2 font-sans font-extralight text-sm">{project.description}</p>
+
+
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {project.techUsed.split(',').map((tech, index) => (
+                      <span
+                        key={index}
+                        className="text-xs bg-gray-800 text-gray-400 hover:scale-110 transition-all px-2 py-1 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Links */}
+                  <div className="flex items-center justify-end gap-6 mt-4">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-green-400 hover:scale-110 transition-all"
+                    >
+                      🌐 Website
+                    </a>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm flex  text-green-400 hover:scale-110 transition-all"
+                    >
+                      <Github className="w-4 h-8 text-white" />
+                      <p className="px-1 py-2"> GitHub</p>
+                    </a>
+                  </div>
+                </div>
               ))}
             </div>
           </Element>
+
 
           <Element name="skills">
             <h2 className="text-3xl pt-10 text-green-100 font-sans font-bold relative inline-block">
@@ -487,7 +512,7 @@ export default function Home() {
             </h2>
           </Element>
 
-          <Element name="skills" className="mt-10 skills center-on-phone">
+          <Element className="mt-10 skills center-on-phone">
             <div className="max-w-4xl mx-auto px-4">
               <motion.div
                 variants={containerVariants}
@@ -544,69 +569,69 @@ export default function Home() {
             </div>
           </Element>
 
-          <Element name="education" className="bg-gray-950 rounded-xl py-8 mt-10 px-4 md:px-6 lg:px-8">
+          <Element name="education" className="bg-gray-950 rounded-xl py-12 mt-10 px-6 md:px-8 lg:px-10">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={containerVariants}
             >
-              <h2 className="text-3xl pt-4 text-green-100 font-sans font-bold relative inline-block">
+              {/* Header */}
+              <h2 className="text-4xl font-bold text-green-100 relative inline-block">
                 Education
-                <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-green-500/50 to-transparent" />
+                <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-green-500 to-transparent" />
               </h2>
 
-              <motion.div className="mt-6 space-y-4">
+              {/* Education Cards */}
+              <motion.div className="mt-8 grid grid-cols-1 gap-6">
                 {education.map((item, index) => (
                   <motion.div
                     key={item.title}
                     variants={itemVariants}
                     whileHover={{ scale: 1.02 }}
-                    className="group"
+                    className="group relative border border-gray-800 hover:border-gray-700 rounded-2xl bg-gray-900 p-6 transition-all duration-300"
                   >
-                    <div className="relative">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500/50 via-green-500/25 to-gray-800/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+                    {/* Gradient Effect */}
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-green-500/10 via-gray-900/5 to-gray-800 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-lg"></div>
 
-                      <div className="relative rounded-2xl p-4 bg-gray-900 border border-gray-800 group-hover:border-gray-700 transition-all duration-300">
-                        <div className="md:flex justify-between items-center gap-4">
-                          <div className="flex items-center gap-x-4">
-                            <div className="relative">
-                              <Image
-                                src={item.image}
-                                alt={item.title}
-                                width={100}
-                                height={100}
-                                className="rounded-md w-20 h-20 object-cover transition-transform duration-300 group-hover:scale-105"
-                              />
-                              <div className="absolute inset-0 bg-green-500/10 rounded-md opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </div>
-
-                            <div className="flex flex-col">
-                              <h2 className="text-lg font-semibold text-gray-100 group-hover:text-green-400 transition-colors mt-4 md:mt-0">
-                                {item.title}
-                              </h2>
-                              <p className="text-gray-400">
-                                {item.description}
-                              </p>
-                            </div>
-                          </div>
-
-                        </div>
-                        <div className="flex justify-end py-2 items-center gap-2 text-gray-400 mt-4 md:mt-0">
-                          <Calendar className="w-4 h-4" />
-                          <span className="text-sm">{item.date}</span>
-                        </div>
+                    {/* Card Content */}
+                    <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6">
+                      {/* Image */}
+                      <div className="relative w-24 h-24">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          layout="fill"
+                          className="rounded-lg object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-green-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       </div>
+
+                      {/* Text Content */}
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-semibold text-gray-100 group-hover:text-green-400 transition-colors">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-gray-400 mt-2">{item.description}</p>
+                      </div>
+                    </div>
+
+                    {/* Footer */}
+                    <div className="mt-4 flex items-center text-gray-400 text-sm">
+                      <Calendar className="w-5 h-5 mr-2" />
+                      <span>{item.date}</span>
                     </div>
                   </motion.div>
                 ))}
               </motion.div>
             </motion.div>
 
+            {/* Background Effects */}
             <div className="absolute -z-10 inset-0">
-              <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-green-500/5 to-transparent" />
-              <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-green-500/5 to-transparent" />
+              <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-green-500/10 to-transparent" />
+              <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-green-500/10 to-transparent" />
             </div>
           </Element>
+
 
           <Element className="mt-10 hireme" name="hireme">
             <ContactMe />
