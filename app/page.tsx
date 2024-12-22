@@ -12,6 +12,7 @@ import ContactMe from "@/components/ui/hireme";
 import { Calendar, ArrowUpRight, Sparkles } from 'lucide-react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import HackerScrollEffects from "@/components/ui/HackerScrollEffects";
 
 const projects = [
   {
@@ -46,7 +47,7 @@ const projects = [
 const experience = [
   {
     title: "Full Stack Developer | Paid Internship",
-    description: "MysticGrafix",
+    description: "MYSTICGRAFIX",
     date: "Sept 2024 - Present",
     image: "/images/mysticgrafix.jpg",
   }
@@ -165,6 +166,7 @@ export default function Home() {
 
   return (
     <div>
+
       <motion.div
         initial={{ y: 0, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -200,249 +202,275 @@ export default function Home() {
             animation: "hacking-glow 5s infinite alternate",
           }}
         />
-
-        <div
-          className="top-0 left-0 w-full h-full overflow-hidden"
-          style={{ animation: "scrolling-text 20s linear infinite" }}
-        >
-          <div className="font-mono text-neon-green opacity-30">
-            <p>// Code snippets scrolling across the screen...</p>
-            <p>// Example: console.log(&apos;Hello, world!&apos;)</p>
-            <p>// Optimizing algorithms and writing clean code...</p>
-          </div>
-        </div>
-
         <motion.div
-          initial="visible"
-          animate={isHidden ? 'hidden' : 'visible'}
-          variants={{
-            hidden: { y: '-700%' },
-            visible: { y: '0%' }
-          }}
-          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="fixed top-0 z-50 w-full justify-center pt-3 hidden md:flex"
+          initial={{ y: 0, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2 }}
+          className="relative min-h-screen w-full bg-dark-purple overflow-hidden"
         >
+          <HackerScrollEffects />
+          {/* rest of your content */}
+          <div
+            className="top-0 left-0 w-full h-full overflow-hidden"
+            style={{ animation: "scrolling-text 20s linear infinite" }}
+          >
+            <div className="font-mono text-neon-green opacity-30">
+              <p>// Code snippets scrolling across the screen...</p>
+              <p>// Example: console.log(&apos;Hello, world!&apos;)</p>
+              <p>// Optimizing algorithms and writing clean code...</p>
+            </div>
+          </div>
+
           <motion.div
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 260,
-              damping: 20
+            initial="visible"
+            animate={isHidden ? 'hidden' : 'visible'}
+            variants={{
+              hidden: { y: '-700%' },
+              visible: { y: '0%' }
             }}
-            className="fixed top-6 -translate-x-1/2 z-50"
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            className="fixed top-0 z-50 w-full justify-center pt-3 hidden md:flex"
           >
             <motion.div
-              className="relative backdrop-blur-xl bg-emerald-950/30 border border-emerald-800/30 rounded-2xl shadow-[0_8px_32px_0_rgba(0,255,150,0.1)]"
-              whileHover={{
-                boxShadow: "0 8px 32px 0 rgba(0,255,150,0.2)",
-                transition: { duration: 0.3 }
+              initial={{ y: -100 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 20
               }}
+              className="fixed top-6 -translate-x-1/2 z-50"
             >
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-emerald-900/20 to-green-900/20 rounded-2xl opacity-50"
-                animate={{
-                  background: [
-                    "radial-gradient(circle at 0% 0%, rgba(4,120,87,0.1) 0%, transparent 50%)",
-                    "radial-gradient(circle at 100% 100%, rgba(4,120,87,0.1) 0%, transparent 50%)",
-                    "radial-gradient(circle at 0% 0%, rgba(4,120,87,0.1) 0%, transparent 50%)"
-                  ]
+                className="relative backdrop-blur-xl bg-emerald-950/30 border border-emerald-800/30 rounded-2xl shadow-[0_8px_32px_0_rgba(0,255,150,0.1)]"
+                whileHover={{
+                  boxShadow: "0 8px 32px 0 rgba(0,255,150,0.2)",
+                  transition: { duration: 0.3 }
                 }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              />
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-emerald-900/20 to-green-900/20 rounded-2xl opacity-50"
+                  animate={{
+                    background: [
+                      "radial-gradient(circle at 0% 0%, rgba(4,120,87,0.1) 0%, transparent 50%)",
+                      "radial-gradient(circle at 100% 100%, rgba(4,120,87,0.1) 0%, transparent 50%)",
+                      "radial-gradient(circle at 0% 0%, rgba(4,120,87,0.1) 0%, transparent 50%)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                />
 
-              <div className="relative px-3 py-3 flex items-center gap-2">
-                {navbar.map((item, index) => (
-                  <motion.div
-                    key={item.title}
-                    onHoverStart={() => setHoveredItem(item.title)}
-                    onHoverEnd={() => setHoveredItem("")}
-                    className="relative"
-                  >
-                    <ScrollLink
-                      to={item.link}
-                      smooth={true}
-                      duration={700}
-                      className="relative block px-4 py-2 text-emerald-100/90 hover:text-emerald-100 font-medium"
+                <div className="relative px-3 py-3 flex items-center gap-2">
+                  {navbar.map((item, index) => (
+                    <motion.div
+                      key={item.title}
+                      onHoverStart={() => setHoveredItem(item.title)}
+                      onHoverEnd={() => setHoveredItem("")}
+                      className="relative"
                     >
-                      <AnimatePresence>
-                        {hoveredItem === item.title && (
-                          <motion.div
-                            className="absolute inset-0 bg-gradient-to-r from-emerald-800/40 to-green-800/40 rounded-xl"
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.8 }}
-                            transition={{
-                              type: "spring",
-                              stiffness: 400,
-                              damping: 30
-                            }}
-                          />
-                        )}
-                      </AnimatePresence>
-                      <motion.span
-                        className="relative z-10 flex items-center gap-2"
-                        whileHover={{ x: 2 }}
-                        transition={{ type: "spring", stiffness: 300 }}
+                      <ScrollLink
+                        to={item.link}
+                        smooth={true}
+                        duration={700}
+                        className="relative block px-4 py-2 text-emerald-100/90 hover:text-emerald-100 font-medium"
                       >
-                        {item.title}
-                        {hoveredItem === item.title && (
-                          <motion.div
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.1 }}
-                          >
-                            {/* <Sparkles size={14} className="text-emerald-400" /> */}
-                          </motion.div>
-                        )}
-                      </motion.span>
-                      <motion.div
-                        className="absolute bottom-1 left-0 h-0.5 w-full bg-gradient-to-r from-green-500 to-transparent"
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: hoveredItem === item.title ? 1 : 0 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                      />
-                      {/* <div className="absolute -bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-green-500 to-transparent" /> */}
+                        <AnimatePresence>
+                          {hoveredItem === item.title && (
+                            <motion.div
+                              className="absolute inset-0 bg-gradient-to-r from-emerald-800/40 to-green-800/40 rounded-xl"
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              exit={{ opacity: 0, scale: 0.8 }}
+                              transition={{
+                                type: "spring",
+                                stiffness: 400,
+                                damping: 30
+                              }}
+                            />
+                          )}
+                        </AnimatePresence>
+                        <motion.span
+                          className="relative z-10 flex items-center gap-2"
+                          whileHover={{ x: 2 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          {item.title}
+                          {hoveredItem === item.title && (
+                            <motion.div
+                              initial={{ opacity: 0, scale: 0 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: 0.1 }}
+                            >
+                              {/* <Sparkles size={14} className="text-emerald-400" /> */}
+                            </motion.div>
+                          )}
+                        </motion.span>
+                        <motion.div
+                          className="absolute bottom-1 left-0 h-0.5 w-full bg-gradient-to-r from-green-500 to-transparent"
+                          initial={{ scaleX: 0 }}
+                          animate={{ scaleX: hoveredItem === item.title ? 1 : 0 }}
+                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                        />
+                        {/* <div className="absolute -bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-green-500 to-transparent" /> */}
 
-                    </ScrollLink>
-                  </motion.div>
-                ))}
+                      </ScrollLink>
+                    </motion.div>
+                  ))}
 
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <motion.button
-                      className="relative px-5 py-2 text-emerald-100/90 font-medium rounded-xl overflow-hidden"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-emerald-700/50 to-green-700/50 rounded-xl"
-                        whileHover={{
-                          opacity: [0.5, 0.7, 0.5],
-                          transition: { duration: 2, repeat: Infinity }
-                        }}
-                      />
-                      <motion.div
-                        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(4,120,87,0.3),transparent_60%)]"
-                        style={{ mixBlendMode: "plus-lighter" }}
-                      />
-                      <span className="relative z-10">Contact</span>
-                    </motion.button>
-                  </DialogTrigger>
-                  <DialogContent className="text-white mt-4 bg-emerald-950/95 border-emerald-900">
-                    <div className="p-6">
-                      <h2 className="text-2xl font-bold text-emerald-50">Contact Me</h2>
-                      <InlineWidget url="" />
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              </div>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <motion.button
+                        className="relative px-5 py-2 text-emerald-100/90 font-medium rounded-xl overflow-hidden"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-emerald-700/50 to-green-700/50 rounded-xl"
+                          whileHover={{
+                            opacity: [0.5, 0.7, 0.5],
+                            transition: { duration: 2, repeat: Infinity }
+                          }}
+                        />
+                        <motion.div
+                          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(4,120,87,0.3),transparent_60%)]"
+                          style={{ mixBlendMode: "plus-lighter" }}
+                        />
+                        <span className="relative z-10">Contact</span>
+                      </motion.button>
+                    </DialogTrigger>
+                    <DialogContent className="text-white mt-4 bg-emerald-950/95 border-emerald-900">
+                      <div className="p-6">
+                        <h2 className="text-2xl font-bold text-emerald-50">Contact Me</h2>
+                        <InlineWidget url="" />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                </div>
+              </motion.div>
             </motion.div>
           </motion.div>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isHidden ? 1 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="fixed top-2 left-1/2 -translate-x-1/2 z-50 hidden md:block"
-        >
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setIsHidden(false)}
-            className="p-2 rounded-full bg-gray-900/50 backdrop-blur-sm border border-white/20 text-white/80 shadow-lg"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isHidden ? 1 : 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed top-2 left-1/2 -translate-x-1/2 z-50 hidden md:block"
           >
-            <ChevronDown className="w-4 h-4" />
-          </motion.button>
-        </motion.div>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setIsHidden(false)}
+              className="p-2 rounded-full bg-gray-900/50 backdrop-blur-sm border border-white/20 text-white/80 shadow-lg"
+            >
+              <ChevronDown className="w-4 h-4" />
+            </motion.button>
+          </motion.div>
 
+          <div className="md:w-3/5 mx-auto px-6 md:px-0 ">
+            <div className="pt-10 justify-end items-center flex underline md:hidden">
+              <Dialog>
+                <DialogTrigger>Contact</DialogTrigger>
+                <DialogContent>
+                  <InlineWidget url="https://calendly.com/birdsoftware/15min" />
+                </DialogContent>
+              </Dialog>
+            </div>
 
+            <div className="md:flex md:gap-x-10 items-center md:pt-28">
 
-        <div className="md:w-3/5 mx-auto px-6 md:px-0 pb-20 ">
-          <div className="pt-10 justify-end items-center flex underline md:hidden">
-            <Dialog>
-              <DialogTrigger>Contact</DialogTrigger>
-              <DialogContent>
-                <InlineWidget url="https://calendly.com/birdsoftware/15min" />
-              </DialogContent>
-            </Dialog>
-          </div>
+              <div className="px-4 lg:px-10">
+                <h1 className="text-3xl lg:text-5xl text-white text-center font-semibold tracking-wide">Transforming Concepts into Seamless <span style={{ color: "#B6E2CC" }}>User Experiences</span></h1>
 
-          <div className="md:flex md:gap-x-10 items-center md:pt-28">
+                <div className="flex gap-4 py-8">
+                  <motion.div
+                    style={{
+                      display: "inline-block",
+                    }}
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{
+                      duration: 1.5,
+                      ease: "easeInOut",
+                      repeat: Infinity,
+                    }}
+                    className="text-4xl my-4"
+                    aria-label="Code emoji animation"
+                  >
+                    💻
+                  </motion.div>
 
-            <div className="px-4 lg:px-10">
-              <h1 className="text-3xl lg:text-5xl text-white text-center font-semibold tracking-wide">Transforming Concepts into Seamless <span style={{ color: "#B6E2CC" }}>User Experiences</span></h1>
+                  <h1 className="text-lg lg:text-4xl text-white font-semibold tracking-wide">
+                    <Typewriter
+                      words={[
+                        "Hello! I'm Saksham Garg, a web developer crafting seamless digital experiences."
+                      ]}
+                      cursor
+                    />
+                  </h1>
+                </div>
 
-              <div className="flex gap-4 py-8">
-                <motion.div
-                  style={{
-                    display: "inline-block",
-                  }}
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{
-                    duration: 1.5,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                  }}
-                  className="text-4xl my-4"
-                  aria-label="Code emoji animation"
-                >
-                  💻
-                </motion.div>
-
-                <h1 className="text-lg lg:text-4xl text-white font-semibold tracking-wide">
-                  <Typewriter
-                    words={[
-                      "Hello! I'm Saksham Garg, a web developer crafting seamless digital experiences."
-                    ]}
-                    cursor
-                  />
-                </h1>
               </div>
 
             </div>
 
-          </div>
-          <Element name="resume" className=" lg:px-80  resume center-on-phone">
-            <a
-              href="https://drive.google.com/file/d/1ixpSa0ON_YTPXqL4Vuy0o4ZSrGgYusn4/view?usp=drivesdk"
-              className="text-xl resumei rounded-xl flex justify-center p-4 bg-gradient-to-r from-green-500 via-green-800 to-green-950 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transform transition-transform duration-300 ease-in-out"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open Resume
-            </a>
-          </Element>
-          <div className="flex gap-6 justify-center md:mt-32">
-            <motion.a
-              whileHover={{ scale: 1.1 }}
-              href="https://github.com/Sakshamgargj"
-              className="text-white hover:text-green-300"
-            >
-              <Github className="w-8 h-8" />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.1 }}
-              href="https://www.linkedin.com/in/saksham-garg-aa5932313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-              className="text-white hover:text-green-300"
-            >
-              <Linkedin className="w-8 h-8" />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.1 }}
-              href="mailto:gargsaksham092@gmail.com"
-              className="text-white hover:text-green-300"
-            >
-              <Mail className="w-8 h-8" />
-            </motion.a>
-          </div>
 
+            <Element name="resume" className=" lg:px-80  resume center-on-phone">
+              <a
+                href="https://drive.google.com/file/d/1ixpSa0ON_YTPXqL4Vuy0o4ZSrGgYusn4/view?usp=drivesdk"
+                className="text-xl resumei rounded-xl flex justify-center p-4 bg-gradient-to-r from-green-500 via-green-800 to-green-950 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-110 hover:bg-green-950  transform transition-transform duration-300 ease-in-out"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open Resume
+              </a>
+            </Element>
 
+            <div className="flex gap-6 justify-center md:mt-32">
+              <motion.a
+                whileHover={{ scale: 1.2 }}
+                href="https://github.com/Sakshamgargj"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-500 relative group"
+              >
+                <Github className="w-7 h-8" />
+                {/* Tooltip */}
+                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-sm bg-gray-800 text-gray-500 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                  GitHub
+                </span>
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.2 }}
+                href="https://www.linkedin.com/in/saksham-garg-aa5932313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-400 relative group"
+              >
+                <Linkedin className="w-7 h-8" />
+                {/* Tooltip */}
+                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-sm bg-gray-800 text-blue-400 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                  LinkedIn
+                </span>
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.2 }}
+                href="mailto:gargsaksham092@gmail.com"
+                className="text-white hover:text-blue-300/50 relative group"
+              >
+                <Mail className="w-7 h-8" />
+                {/* Tooltip */}
+                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-sm bg-gray-800 text-blue-400/40 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                  Email
+                </span>
+              </motion.a>
+            </div>
+
+          </div>
+        </motion.div>
+        <div className="md:w-3/5 mx-auto px-6 md:px-0 pb-20 ">
           <div className="py-4">
             <Element name="work" className="mt-20 bg-gray-950 rounded-xl py-12 px-6 md:px-8 lg:px-10">
               <motion.div
@@ -463,7 +491,7 @@ export default function Home() {
                       key={item.title}
                       variants={itemVariants}
                       whileHover={{ scale: 1.02 }}
-                      className="group relative border border-gray-800 hover:border-gray-700 rounded-2xl bg-gray-900 p-6 transition-all duration-300"
+                      className="group relative border border-gray-800 rounded-2xl bg-gray-900 p-6 transition-all duration-300 shadow-lg shadow-green-300/60 hover:border-green-700 hover:shadow-green-700"
                     >
                       {/* Gradient Effect */}
                       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-green-500/10 via-gray-900/5 to-gray-800 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-lg"></div>
@@ -519,9 +547,9 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
               {projects.map((project) => (
-                <div
+                <a href={project.link} target="_blank"
                   key={project.title}
-                  className="group border border-gray-800 hover:border-gray-700 rounded-lg p-4 bg-gray-900 transition-all duration-300"
+                  className="group border border-gray-800 shadow-lg shadow-green-300/60 hover:border-green-700 hover:shadow-green-500/60 rounded-lg p-4 bg-gray-900 transition-all duration-300"
                 >
                   {/* Video Section */}
                   <div className="relative mb-4">
@@ -578,7 +606,7 @@ export default function Home() {
                       <p className="px-1 py-2"> GitHub</p>
                     </a>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </Element>
@@ -591,13 +619,13 @@ export default function Home() {
             </h2>
           </Element>
 
-          <Element name="skillss" className="mt-10 skills center-on-phone">
+          <Element name="skillss" className="mt-10 skills center-on-phone ">
             <div className="max-w-4xl mx-auto px-4">
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-4"
+                className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-2 lg:gap-8"
               >
                 {expertise.map((skill, index) => (
                   <motion.div
@@ -613,12 +641,12 @@ export default function Home() {
                     h-24 rounded-lg p-4 flex items-center justify-center
                     bg-gray-900 border border-gray-800
                     transition-all duration-300
-                    ${hoveredSkill === skill.name ? 'shadow-lg shadow-green-500/20' : ''}
+                    ${hoveredSkill === skill.name ? '' : 'shadow-lg shadow-green-500/20'}
                   `}
                       style={{
                         background: hoveredSkill === skill.name
-                          ? `linear-gradient(135deg, rgba(${parseInt(skill.color.slice(1, 3), 16)}, ${parseInt(skill.color.slice(3, 5), 16)}, ${parseInt(skill.color.slice(5, 7), 16)}, 0.1), rgba(0, 0, 0, 0.8))`
-                          : undefined
+                          ? undefined
+                          : `linear-gradient(135deg, rgba(${parseInt(skill.color.slice(1, 3), 16)}, ${parseInt(skill.color.slice(3, 5), 16)}, ${parseInt(skill.color.slice(5, 7), 16)}, 0.1), rgba(0, 0, 0, 0.8))`
                       }}
                     >
                       <div className="text-center">
@@ -626,7 +654,7 @@ export default function Home() {
                         <div
                           className="h-1 w-16 mx-auto rounded"
                           style={{
-                            backgroundColor: hoveredSkill === skill.name ? skill.color : '#374151',
+                            backgroundColor: hoveredSkill === skill.name ? '#374151' : skill.color,
                             transition: 'background-color 0.3s ease'
                           }}
                         />
@@ -667,7 +695,7 @@ export default function Home() {
                     key={item.title}
                     variants={itemVariants}
                     whileHover={{ scale: 1.02 }}
-                    className="group relative border border-gray-800 hover:border-gray-700 rounded-2xl bg-gray-900 p-6 transition-all duration-300"
+                    className="group relative border border-gray-800 hover:border-green-700 hover:shadow-green-700 rounded-2xl bg-gray-900 p-6 transition-all duration-300 shadow-lg shadow-green-300/60"
                   >
                     {/* Gradient Effect */}
                     <div className="absolute inset-0 -z-10 bg-gradient-to-r from-green-500/10 via-gray-900/5 to-gray-800 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-lg"></div>
@@ -717,6 +745,7 @@ export default function Home() {
           </Element>
         </div>
       </motion.div>
+
     </div>
   );
 }
