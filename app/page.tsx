@@ -174,18 +174,18 @@ export default function Home() {
         className="relative min-h-screen w-full bg-dark-purple overflow-hidden"
         style={{
           background: `
-          radial-gradient(circle, rgba(32, 8, 36, 1) 0%, rgba(16, 4, 20, 1) 100%),
+          radial-gradient(circle, rgba(1, 1,90, 1) 0%, rgba(1, 1, 40, 8) 100%),
           repeating-linear-gradient(
             to bottom,
-            rgba(0, 255, 0, 0.1) 0px,
-            rgba(0, 255, 0, 0.1) 2px,
+            rgba(0, 0, 0, 1) 0px,
+            rgba(0, 0, 0, 1) 2px,
             transparent 2px,
             transparent 5px
           ),
           repeating-linear-gradient(
             to right,
-            rgba(0, 255, 0, 0.05) 0px,
-            rgba(0, 255, 0, 0.05) 2px,
+            rgba(0, 0, 0, 5) 0px,
+            rgba(0, 0, 0, 5) 2px,
             transparent 2px,
             transparent 5px
           )
@@ -214,7 +214,7 @@ export default function Home() {
             className="top-0 left-0 w-full h-full overflow-hidden"
             style={{ animation: "scrolling-text 20s linear infinite" }}
           >
-            <div className="font-mono text-neon-green opacity-30">
+            <div className="font-mono text-white/50 opacity-30">
               <p>// Code snippets scrolling across the screen...</p>
               <p>// Example: console.log(&apos;Hello, world!&apos;)</p>
               <p>// Optimizing algorithms and writing clean code...</p>
@@ -242,19 +242,19 @@ export default function Home() {
               className="fixed top-6 -translate-x-1/2 z-50"
             >
               <motion.div
-                className="relative backdrop-blur-xl bg-emerald-950/30 border border-emerald-800/30 rounded-2xl shadow-[0_8px_32px_0_rgba(0,255,150,0.1)]"
+                className="relative backdrop-blur-xl bg-blue-950/30 border border-blue-800/30 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,255,0.1)]"
                 whileHover={{
-                  boxShadow: "0 8px 32px 0 rgba(0,255,150,0.2)",
+                  boxShadow: "0 8px 32px 0 rgba(0,0,255,0.2)",
                   transition: { duration: 0.3 }
                 }}
               >
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-emerald-900/20 to-green-900/20 rounded-2xl opacity-50"
+                  className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-blue-900/20 rounded-2xl opacity-50"
                   animate={{
                     background: [
-                      "radial-gradient(circle at 0% 0%, rgba(4,120,87,0.1) 0%, transparent 50%)",
-                      "radial-gradient(circle at 100% 100%, rgba(4,120,87,0.1) 0%, transparent 50%)",
-                      "radial-gradient(circle at 0% 0%, rgba(4,120,87,0.1) 0%, transparent 50%)"
+                      "radial-gradient(circle at 0% 0%, rgba(4,0,187,0.1) 0%, transparent 50%)",
+                      "radial-gradient(circle at 100% 100%, rgba(4,0,187,0.1) 0%, transparent 50%)",
+                      "radial-gradient(circle at 0% 0%, rgba(4,0,87,0.1) 0%, transparent 50%)"
                     ]
                   }}
                   transition={{
@@ -276,12 +276,12 @@ export default function Home() {
                         to={item.link}
                         smooth={true}
                         duration={700}
-                        className="relative block px-4 py-2 text-emerald-100/90 hover:text-emerald-100 font-medium"
+                        className="relative block px-4 py-2 text-blue-100/90 hover:text-white font-medium"
                       >
                         <AnimatePresence>
                           {hoveredItem === item.title && (
                             <motion.div
-                              className="absolute inset-0 bg-gradient-to-r from-emerald-800/40 to-green-800/40 rounded-xl"
+                              className="absolute inset-0 bg-gradient-to-r from-emerald-800/30 to-blue-800/40 rounded-xl"
                               initial={{ opacity: 0, scale: 0.8 }}
                               animate={{ opacity: 1, scale: 1 }}
                               exit={{ opacity: 0, scale: 0.8 }}
@@ -310,7 +310,7 @@ export default function Home() {
                           )}
                         </motion.span>
                         <motion.div
-                          className="absolute bottom-1 left-0 h-0.5 w-full bg-gradient-to-r from-green-500 to-transparent"
+                          className="absolute bottom-1 left-0 h-0.5 w-full bg-gradient-to-r from-blue-500 to-transparent"
                           initial={{ scaleX: 0 }}
                           animate={{ scaleX: hoveredItem === item.title ? 1 : 0 }}
                           transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -324,12 +324,12 @@ export default function Home() {
                   <Dialog>
                     <DialogTrigger asChild>
                       <motion.button
-                        className="relative px-5 py-2 text-emerald-100/90 font-medium rounded-xl overflow-hidden"
+                        className="relative px-5 py-2 text-blue-100/90 font-medium rounded-xl overflow-hidden"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
                         <motion.div
-                          className="absolute inset-0 bg-gradient-to-r from-emerald-700/50 to-green-700/50 rounded-xl"
+                          className="absolute inset-0 bg-gradient-to-r from-emerald-700/50 to-blue-700/50 rounded-xl"
                           whileHover={{
                             opacity: [0.5, 0.7, 0.5],
                             transition: { duration: 2, repeat: Infinity }
@@ -342,7 +342,7 @@ export default function Home() {
                         <span className="relative z-10">Contact</span>
                       </motion.button>
                     </DialogTrigger>
-                    <DialogContent className="text-white mt-4 bg-emerald-950/95 border-emerald-900">
+                    <DialogContent className="text-white mt-4 bg-blue-950/95 border-blue-900">
                       <div className="p-6">
                         <h2 className="text-2xl font-bold text-emerald-50">Contact Me</h2>
                         <InlineWidget url="" />
@@ -383,7 +383,7 @@ export default function Home() {
             <div className="md:flex md:gap-x-10 items-center md:pt-28">
 
               <div className="px-4 lg:px-10">
-                <h1 className="text-3xl lg:text-5xl text-white text-center font-semibold tracking-wide">Transforming Concepts into Seamless <span style={{ color: "#B6E2CC" }}>User Experiences</span></h1>
+                <h1 className="text-3xl lg:text-5xl text-white text-center font-semibold tracking-wide">Transforming Concepts into Seamless <span style={{ color: "rgba(32, 89, 221, 0.6)" }}>User Experiences</span></h1>
 
                 <div className="flex gap-4 py-8">
                   <motion.div
@@ -420,7 +420,7 @@ export default function Home() {
             <Element name="resume" className=" lg:px-80  resume center-on-phone">
               <a
                 href="https://drive.google.com/file/d/1ixpSa0ON_YTPXqL4Vuy0o4ZSrGgYusn4/view?usp=drivesdk"
-                className="text-xl resumei rounded-xl flex justify-center p-4 bg-gradient-to-r from-green-500 via-green-800 to-green-950 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-110 hover:bg-green-950  transform transition-transform duration-300 ease-in-out"
+                className="text-xl resumei rounded-xl flex justify-center p-4 bg-blue-950 text-white/70 font-semibold shadow-lg hover:shadow-xl hover:scale-110 hover:bg-blue-900/80  transform transition-transform duration-300 ease-in-out"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -470,18 +470,19 @@ export default function Home() {
 
           </div>
         </motion.div>
+
         <div className="md:w-3/5 mx-auto px-6 md:px-0 pb-20 ">
           <div className="py-4">
-            <Element name="work" className="mt-20 bg-gray-950 rounded-xl py-12 px-6 md:px-8 lg:px-10">
+            <Element name="work" className="mt-20 border-gray-800 bg-gray-950/70 rounded-xl py-12 px-6 md:px-8 lg:px-10">
               <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
               >
                 {/* Header */}
-                <h2 className="text-4xl font-bold text-green-100 relative inline-block">
+                <h2 className="text-4xl font-bold text-blue-100 relative inline-block">
                   Work Experience
-                  <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-green-500 to-transparent" />
+                  <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
                 </h2>
 
                 {/* Experience Cards */}
@@ -491,10 +492,10 @@ export default function Home() {
                       key={item.title}
                       variants={itemVariants}
                       whileHover={{ scale: 1.02 }}
-                      className="group relative border border-gray-800 rounded-2xl bg-gray-900 p-6 transition-all duration-300 shadow-lg shadow-green-300/60 hover:border-green-700 hover:shadow-green-700"
+                      className="group relative border border-gray-800 rounded-2xl bg-gray-900/30 p-6 transition-all duration-300 shadow-md hover:shadow-lg shadow-blue-300/60 hover:border-blue-700 hover:shadow-blue-700"
                     >
                       {/* Gradient Effect */}
-                      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-green-500/10 via-gray-900/5 to-gray-800 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-lg"></div>
+                      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-500/10 via-gray-900/5 to-gray-800 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-lg"></div>
 
                       {/* Card Content */}
                       <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6">
@@ -507,12 +508,12 @@ export default function Home() {
                             height={80}
                             className="rounded-lg object-cover w-30 h-20 group-hover:scale-105 transition-transform duration-300"
                           />
-                          <div className="absolute inset-0 bg-green-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                          <div className="absolute inset-0 bg-blue-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
                         </div>
 
                         {/* Text Content */}
                         <div className="flex-1">
-                          <h3 className="text-2xl font-semibold text-gray-100 group-hover:text-green-400 transition-colors">
+                          <h3 className="text-2xl font-semibold text-gray-100 group-hover:text-blue-400 transition-colors">
                             {item.title}
                           </h3>
                           <p className="text-sm text-gray-400 mt-2">{item.description}</p>
@@ -531,25 +532,25 @@ export default function Home() {
 
               {/* Background Effects */}
               <div className="absolute -z-10 inset-0">
-                <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-green-500/10 to-transparent" />
-                <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-green-500/10 to-transparent" />
+                <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-blue-500/10 to-transparent" />
+                <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-blue-500/10 to-transparent" />
               </div>
             </Element>
 
           </div>
 
-          <Element name="projects" className="bg-gray-950 rounded-xl p-8 md:px-6 lg:px-8">
-            <h2 className="text-3xl pt-4 text-green-100 font-sans font-bold relative inline-block">
-              <span className="text-green-100">A Collection of </span>
-              <span style={{ color: "#499561" }}>recent Projects</span>
-              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-green-500/50 to-transparent" />
+          <Element name="projects" className="bg-gray-950/70 rounded-xl p-8 md:px-6 lg:px-8">
+            <h2 className="text-3xl pt-4 text-blue-100 font-sans font-bold relative inline-block">
+              <span className="text-blue-100">A Collection of </span>
+              <span style={{ color: "rgba(32, 89, 161, 1)" }}>recent Projects</span>
+              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500/50 to-transparent" />
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
               {projects.map((project) => (
                 <a href={project.link} target="_blank"
                   key={project.title}
-                  className="group border border-gray-800 shadow-lg shadow-green-300/60 hover:border-green-700 hover:shadow-green-500/60 rounded-lg p-4 bg-gray-900 transition-all duration-300"
+                  className="group border border-gray-800 shadow-md hover:shadow-lg shadow-blue-300/60 hover:border-blue-700 hover:shadow-blue-500/60 rounded-lg p-4 bg-gray-900/30 transition-all duration-300"
                 >
                   {/* Video Section */}
                   <div className="relative mb-4">
@@ -559,13 +560,13 @@ export default function Home() {
                       autoPlay
                       muted
                       playsInline
-                      className="w-full h-48 rounded-md object-cover group-hover:ring-2 hover:scale-105 ring-green-500/30 transition-all"
+                      className="w-full h-48 rounded-md object-cover group-hover:ring-2 hover:scale-105 ring-blue-500/30 transition-all"
                     />
                   </div>
 
                   {/* Project Details */}
                   <div className="flex justify-between">
-                    <h3 className="text-2xl font-semibold text-gray-100 group-hover:text-green-400 transition-colors">
+                    <h3 className="text-2xl font-semibold text-gray-100 group-hover:text-blue-400 transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-gray-500 mt-1 p-2 text-xs">{project.date}</p>
@@ -592,7 +593,7 @@ export default function Home() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-green-400 hover:scale-110 transition-all"
+                      className="text-sm text-blue-400 hover:scale-110 transition-all"
                     >
                       🌐 Website
                     </a>
@@ -600,7 +601,7 @@ export default function Home() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm flex  text-green-400 hover:scale-110 transition-all"
+                      className="text-sm flex  text-blue-400 hover:scale-110 transition-all"
                     >
                       <Github className="w-4 h-8 text-white" />
                       <p className="px-1 py-2"> GitHub</p>
@@ -613,9 +614,9 @@ export default function Home() {
 
 
           <Element name="skills">
-            <h2 className="text-3xl pt-10 skills text-green-100 font-sans font-bold relative inline-block">
+            <h2 className="text-3xl pt-10 skills text-blue-100 font-sans font-bold relative inline-block">
               Technical Expertise
-              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-green-500/50 to-transparent" />
+              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500/50 to-transparent" />
             </h2>
           </Element>
 
@@ -641,7 +642,7 @@ export default function Home() {
                     h-24 rounded-lg p-4 flex items-center justify-center
                     bg-gray-900 border border-gray-800
                     transition-all duration-300
-                    ${hoveredSkill === skill.name ? '' : 'shadow-lg shadow-green-500/20'}
+                    ${hoveredSkill === skill.name ? '' : 'shadow-lg shadow-blue-500/20'}
                   `}
                       style={{
                         background: hoveredSkill === skill.name
@@ -676,16 +677,16 @@ export default function Home() {
             </div>
           </Element>
 
-          <Element name="education" className="bg-gray-950 rounded-xl py-12 mt-10 px-6 md:px-8 lg:px-10">
+          <Element name="education" className="bg-gray-950/70 rounded-xl py-12 mt-10 px-6 md:px-8 lg:px-10">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={containerVariants}
             >
               {/* Header */}
-              <h2 className="text-4xl font-bold text-green-100 relative inline-block">
+              <h2 className="text-4xl font-bold text-blue-100 relative inline-block">
                 Education
-                <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-green-500 to-transparent" />
+                <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
               </h2>
 
               {/* Education Cards */}
@@ -695,10 +696,10 @@ export default function Home() {
                     key={item.title}
                     variants={itemVariants}
                     whileHover={{ scale: 1.02 }}
-                    className="group relative border border-gray-800 hover:border-green-700 hover:shadow-green-700 rounded-2xl bg-gray-900 p-6 transition-all duration-300 shadow-lg shadow-green-300/60"
+                    className="group relative border border-gray-800 hover:border-blue-700 hover:shadow-blue-700 rounded-2xl bg-gray-900/30 p-6 transition-all duration-300 shadow-md hover:shadow-lg shadow-blue-300/60"
                   >
                     {/* Gradient Effect */}
-                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-green-500/10 via-gray-900/5 to-gray-800 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-lg"></div>
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-500/10 via-gray-900/5 to-gray-800 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-lg"></div>
 
                     {/* Card Content */}
                     <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6">
@@ -710,12 +711,12 @@ export default function Home() {
                           layout="fill"
                           className="rounded-lg object-cover group-hover:scale-105 transition-transform duration-300"
                         />
-                        <div className="absolute inset-0 bg-green-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="absolute inset-0 bg-blue-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       </div>
 
                       {/* Text Content */}
                       <div className="flex-1">
-                        <h3 className=" text-lg md:text-2xl font-semibold text-gray-100 group-hover:text-green-400 transition-colors">
+                        <h3 className=" text-lg md:text-2xl font-semibold text-gray-100 group-hover:text-blue-400 transition-colors">
                           {item.title}
                         </h3>
                         <p className="text-sm text-gray-400 mt-2">{item.description}</p>
@@ -734,8 +735,8 @@ export default function Home() {
 
             {/* Background Effects */}
             <div className="absolute -z-10 inset-0">
-              <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-green-500/10 to-transparent" />
-              <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-green-500/10 to-transparent" />
+              <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-blue-500/10 to-transparent" />
+              <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-blue-500/10 to-transparent" />
             </div>
           </Element>
 

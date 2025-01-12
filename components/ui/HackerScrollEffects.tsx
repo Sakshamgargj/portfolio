@@ -10,7 +10,7 @@ const HackerScrollEffects: React.FC = () => {
   // Generate random characters for matrix rain effect
   useEffect(() => {
     const createMatrixColumns = () => {
-      const columns = Array.from({ length: 10 }, () => {
+      const columns = Array.from({ length: 5 }, () => {
         return Array.from({ length: 20 }, () =>
           chars[Math.floor(Math.random() * chars.length)]
         );
@@ -26,16 +26,16 @@ const HackerScrollEffects: React.FC = () => {
   }, [chars]);
 
   return (
-    <div className="absolute w-screen h-full bg-transparent overflow-hidden">
+    <div className="absolute w-screen h-screen bg-transparent overflow-hidden">
       {/* Falling Characters */}
       {matrixRain.map((column, colIndex) => (
         <motion.div
           key={colIndex}
-          className="absolute top-0 left-0 text-green-500 font-mono text-lg whitespace-nowrap"
+          className="absolute top-0 left-0 text-blue-500 font-mono text-lg whitespace-nowrap"
           initial={{ y: "-100%" }}
           animate={{ y: "100%" }}
           transition={{
-            duration: Math.random() * 5 + 1, // Random speed for falling effect
+            duration: Math.random() * 10 + 1, // Random speed for falling effect
             repeat: Infinity,
             ease: "linear",
           }}
