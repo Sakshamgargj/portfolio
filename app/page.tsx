@@ -26,7 +26,7 @@ const projects = [
   },
   {
     title: "Hotel/Resort Application",
-    description: "A comprehensive digital platform designed to revolutionize the Hotel/Resort booking experience. This application enables users to browse, search, and book accommodations seamlessly, providing an intuitive interface and smooth user experience.  The platform is built with scalability in mind, making it ideal for both small and large hospitality businesses. It also features a responsive design, ensuring accessibility across all devices, including desktops, tablets, and smartphones.",
+    description: "A comprehensive digital platform designed to revolutionize the Hotel/Resort booking experience. This application enables users to browse, search, and book accommodations seamlessly, providing an intuitive interface and smooth user experience.  It also features a responsive design, ensuring accessibility across all devices, including desktops, tablets, and smartphones.",
     link: "",
     techUsed: "Next Js, Redux,Tailwind CSS, Javascript",
     github: "https://github.com/Sakshamgargj/hotel_mangement",
