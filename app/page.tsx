@@ -50,6 +50,7 @@ const experience = [
     description: "MYSTICGRAFIX",
     date: "Sept 2024 - Present",
     image: "/images/mysticgrafix.jpg",
+    learning: "Next Js, TailwindCSS, Vercel Deployment, Git & Github, Building Features, Interactive UI, Handling Error, Handling Multiple Projects"
   }
 ];
 
@@ -173,8 +174,9 @@ export default function Home() {
         transition={{ duration: 2 }}
         className="relative min-h-screen w-full bg-dark-purple overflow-hidden"
         style={{
+          userSelect:"none",
           background: `
-          radial-gradient(circle, rgba(1, 1,90, 1) 0%, rgba(1, 1, 40, 8) 100%),
+          radial-gradient(circle, rgba(1, 1,90, 1) 0%, rgba(1, 1, 60, 8) 100%),
           repeating-linear-gradient(
             to bottom,
             rgba(0, 0, 0, 1) 0px,
@@ -520,6 +522,17 @@ export default function Home() {
                         </div>
                       </div>
 
+                      <div className="flex flex-wrap gap-2 mt-3 text-white">
+                        <span className="group-hover:text-blue-500">My Learnings: </span>
+                        {item.learning.split(',').map((tech, index) => (
+                          <span
+                            key={index}
+                            className="text-xs bg-gray-800 text-gray-400 hover:scale-110 transition-all px-2 py-1 rounded-full"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                       {/* Footer */}
                       <div className="mt-4 flex items-center text-gray-400 text-sm">
                         <Calendar className="w-5 h-5 mr-2" />
