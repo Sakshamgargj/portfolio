@@ -50,7 +50,7 @@ const experience = [
     description: "MYSTICGRAFIX",
     date: "Sept 2024 - Present",
     image: "/images/mysticgrafix.jpg",
-    learning: "Next Js, TailwindCSS, Vercel Deployment, Git & Github, Building Features, Interactive UI, Handling Error, Handling Multiple Projects"
+    learning: "Next Js, TailwindCSS, Vercel Deployment, Git & Github, Payment System Integration, User Authentication, Building Features, Interactive UI, Handling Error, Handling Multiple Projects"
   }
 ];
 
