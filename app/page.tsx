@@ -174,9 +174,9 @@ export default function Home() {
         transition={{ duration: 2 }}
         className="relative min-h-screen w-full bg-dark-purple overflow-hidden"
         style={{
-          userSelect:"none",
+          userSelect: "none",
           background: `
-          radial-gradient(circle, rgba(1, 1,90, 1) 0%, rgba(1, 1, 60, 8) 100%),
+          radial-gradient(circle, rgba(1, 1,90, 1) 0%, rgba(1, 1, 100, 8) 100%),
           repeating-linear-gradient(
             to bottom,
             rgba(0, 0, 0, 1) 0px,
@@ -216,7 +216,7 @@ export default function Home() {
             className="top-0 left-0 w-full h-full overflow-hidden"
             style={{ animation: "scrolling-text 20s linear infinite" }}
           >
-            <div className="font-mono text-white/50 opacity-30">
+            <div className="font-mono text-white/80 opacity-30">
               <p>// Code snippets scrolling across the screen...</p>
               <p>// Example: console.log(&apos;Hello, world!&apos;)</p>
               <p>// Optimizing algorithms and writing clean code...</p>
@@ -385,7 +385,18 @@ export default function Home() {
             <div className="md:flex md:gap-x-10 items-center md:pt-28">
 
               <div className="px-4 lg:px-10">
-                <h1 className="text-3xl lg:text-5xl text-white text-center font-semibold tracking-wide">Transforming Concepts into Seamless <span style={{ color: "rgba(32, 89, 221, 0.6)" }}>User Experiences</span></h1>
+                <h1 className="text-3xl lg:text-5xl text-white text-center font-semibold tracking-wide">Transforming Concepts into Seamless {" "}
+                  <span
+                    style={{
+                      background: "linear-gradient(to right, #84C1FF, #2059DD)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      fontWeight: "bold",
+                    }}
+                  >
+                     User Experiences
+                  </span>
+                </h1>
 
                 <div className="flex gap-4 py-8">
                   <motion.div
@@ -473,9 +484,9 @@ export default function Home() {
           </div>
         </motion.div>
 
-        <div className="md:w-3/5 mx-auto px-6 md:px-0 pb-20 ">
+        <div className="md:w-4/6 mx-auto px-6 md:px-0 pb-20 ">
           <div className="py-4">
-            <Element name="work" className="mt-20 border-gray-800 bg-gray-950/70 rounded-xl py-12 px-6 md:px-8 lg:px-10">
+            <Element name="work" className=" border-gray-800 bg-gray-950/70 rounded-xl py-12 px-6 md:px-8 lg:px-10">
               <motion.div
                 initial="hidden"
                 animate="visible"

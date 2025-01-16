@@ -10,7 +10,7 @@ const HackerScrollEffects: React.FC = () => {
   // Generate random characters for matrix rain effect
   useEffect(() => {
     const createMatrixColumns = () => {
-      const columns = Array.from({ length: 5 }, () => {
+      const columns = Array.from({ length: 4 }, () => {
         return Array.from({ length: 20 }, () =>
           chars[Math.floor(Math.random() * chars.length)]
         );
@@ -40,7 +40,7 @@ const HackerScrollEffects: React.FC = () => {
             ease: "linear",
           }}
           style={{ 
-            left: `${colIndex * 3}vw`, // Space columns evenly
+            left: `${colIndex * 4}vw`, // Space columns evenly
           }}
         >
           {column.map((char, charIndex) => (

@@ -27,14 +27,14 @@ const ContactMe: React.FC = () => {
         whileTap={{ scale: 0.95 }}
         style={{
           background: 'linear-gradient(135deg, #1e1e2f 0%, #28293e 100%)',
-          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)'
+          boxShadow: '0 4px 15px rgba(0, 0, 0, 1)'
         }}
       >
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20"
+          className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-500"
           animate={{
             background: [
-              'linear-gradient(135deg, rgba(168,85,247,0.2) 0%, rgba(59,130,246,0.2) 100%)',
+              'linear-gradient(135deg, rgba(168,255,247,0.2) 0%, rgba(59,130,246,1) 100%)',
               'linear-gradient(135deg, rgba(59,130,246,0.2) 0%, rgba(168,85,247,0.2) 100%)'
             ]
           }}
@@ -49,7 +49,7 @@ const ContactMe: React.FC = () => {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.7 }}
             className="absolute bottom-16 right-0 w-80 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden"
             style={{ boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)' }}
           >
@@ -65,18 +65,18 @@ const ContactMe: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex-1 py-2 px-4 rounded-lg font-medium text-white bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-colors"
-                  onClick={handleWhatsAppClick}
-                >
-                  WhatsApp
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                   className="flex-1 py-2 px-4 rounded-lg font-medium text-white bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 transition-colors"
                   onClick={handleEmailClick}
                 >
                   Send Mail
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex-1 py-2 px-4 rounded-lg font-medium text-white bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-colors"
+                  onClick={handleWhatsAppClick}
+                >
+                  WhatsApp
                 </motion.button>
               </div>
             </div>
