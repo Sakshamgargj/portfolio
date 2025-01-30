@@ -63,6 +63,126 @@ const HackerScrollEffects: React.FC = () => {
 
 export default HackerScrollEffects;
 
+/*
+another--
+"use client";
+
+import { useEffect, useState } from "react";
+
+const HackerScrollEffects = () => {
+  const delays = [0, 2.3, 3.5, 2.8, 5, 4.3];
+  const particleStyles = [
+    {
+      background: "rgb(255, 222, 81)",
+      transform: "translate3d(0px, 0px, 1685px)",
+      boxShadow: "rgba(72, 135, 202, 0.8) 0 0 90px 33px",
+      delay: 0.3
+    },
+    {
+      background: "rgb(94, 99, 254)",
+      transform: "translate3d(38px, 40px, 1400px)",
+      delay: 0.8
+    },
+    {
+      background: "rgb(255, 107, 108)",
+      transform: "translate3d(-116px, 104px, 723px)",
+      delay: 0.5
+    },
+    {
+      background: "white",
+      transform: "translate3d(-200px, -100px, 1200px)",
+      delay: 0.2
+    },
+    {
+      background: "rgb(77, 170, 87)",
+      transform: "translate3d(380px, -344px, 1305px)",
+      delay: 1.2
+    },
+    {
+      background: "rgb(229, 240, 85)",
+      transform: "translate3d(241px, 125px, 684px)",
+      delay: 0.8
+    },
+    {
+      background: "rgb(254, 76, 136)",
+      transform: "translate3d(-50px, 400px, 300px)",
+      delay: 1.0
+    },
+    {
+      background: "rgb(107, 228, 255)",
+      transform: "translate3d(380px, -400px, 2100px)",
+      delay: 3.5
+    },
+    {
+      background: "rgb(192, 173, 248)",
+      transform: "translate3d(200px, 1000px, 600px)",
+      delay: 2.2
+    },
+    {
+      background: "rgb(217, 231, 203)",
+      transform: "translate3d(-50px, 400px, 300px)",
+      delay: 1.5
+    }
+  ];
+
+  return (
+    <div className="absolute w-full h-screen m-0 p-0 overflow-hidden">
+      <div className="w-full h-full relative" style={{ perspective: "800px" }}>
+        <div 
+          className="absolute w-[400px] h-[400px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          style={{ perspective: "800px" }}
+        >
+          {delays.map((delay, groupIndex) => (
+            <div
+              key={groupIndex}
+              className="absolute top-0 left-0 w-[400px] h-[400px]"
+              style={{
+                transformStyle: "preserve-3d",
+                transformOrigin: "center",
+                perspective: "600px",
+                top: "calc(50% - 25px)",
+                transform: groupIndex % 2 === 0 ? "rotate(0deg)" : "rotate(180deg)",
+                animation: "colors 3s ",
+                "--delay": `${delay}s`
+              } as any}
+            >
+              {particleStyles.map((style, particleIndex) => (
+                <div
+                  key={particleIndex}
+                  className="absolute w-[30px] h-[30px] rounded-full top-[185px] left-[185px]"
+                  style={{
+                    background: style.background,
+                    boxShadow: style.boxShadow,
+                    transform: style.transform,
+                    animation: "move 3s ",
+                    animationDelay: `calc(var(--delay) - ${style.delay}s)`,
+                  }}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes colors {
+          to {
+            filter: hue-rotate(360deg);
+          }
+        }
+        @keyframes move {
+          100% {
+            transform: translate3d(0, 0, -1000px);
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default HackerScrollEffects;
+
+*/
 
 /*
 "use client";

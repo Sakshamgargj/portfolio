@@ -19,13 +19,13 @@ const projects = [
     title: "E-Commerce",
     description: "E-Commerce a fully responsive, high-performance, scalable platform using modern web technologies, provides a seamless shopping experience for users to browse, book, and manage categories of products effortlessly. Focused highly on efficient e-commerce platform that increased the clients online sales and enhanced user engagement.",
     link: "https://ventesinfotech-wqb5.vercel.app/",
-    techUsed: "Next JS, React Redux, Tailwind CSS, Node.js, Express.js,Multer, MongoDB, Mongoose",
+    techUsed: "Next JS, Redux, Tailwind CSS, Node.js, Express.js,Multer, MongoDB, Mongoose",
     github: "https://github.com/Sakshamgargj/ventesinfotech",
     date: "2024",
     video: "/video/eCommerce.mp4",
   },
   {
-    title: "Hotel/Resort Application",
+    title: "Resort Application",
     description: "A comprehensive digital platform designed to revolutionize the Hotel/Resort booking experience. This application enables users to browse, search, and book accommodations seamlessly, providing an intuitive interface and smooth user experience.  It also features a responsive design, ensuring accessibility across all devices, including desktops, tablets, and smartphones.",
     link: "",
     techUsed: "Next Js, Redux,Tailwind CSS, Javascript",
@@ -382,7 +382,7 @@ export default function Home() {
               </Dialog>
             </div>
 
-            <div className="md:flex md:gap-x-10 items-center md:pt-28">
+            <div className="md:flex md:gap-x-10 -mt-12 items-center md:pt-28">
 
               <div className="px-4 lg:px-10">
                 <h1 className="text-3xl lg:text-5xl text-white text-center font-semibold tracking-wide">Transforming Concepts into Seamless {" "}
@@ -441,13 +441,13 @@ export default function Home() {
               </a>
             </Element>
 
-            <div className="flex gap-6 justify-center md:mt-32">
+            <div className="flex gap-6 justify-center md:mt-36">
               <motion.a
                 whileHover={{ scale: 1.2 }}
                 href="https://github.com/Sakshamgargj"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-500 relative group"
+                className="text-gray-500 hover:text-gray-500 relative group"
               >
                 <Github className="w-7 h-8" />
                 {/* Tooltip */}
@@ -460,7 +460,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/saksham-garg-aa5932313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-blue-400 relative group"
+                className="text-blue-400/90 hover:text-blue-400 relative group"
               >
                 <Linkedin className="w-7 h-8" />
                 {/* Tooltip */}
@@ -471,7 +471,7 @@ export default function Home() {
               <motion.a
                 whileHover={{ scale: 1.2 }}
                 href="mailto:gargsaksham092@gmail.com"
-                className="text-white hover:text-blue-300/50 relative group"
+                className="text-blue-400/80 hover:text-blue-300/50 relative group"
               >
                 <Mail className="w-7 h-8" />
                 {/* Tooltip */}
@@ -570,11 +570,11 @@ export default function Home() {
               <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500/50 to-transparent" />
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mt-5">
               {projects.map((project) => (
                 <a href={project.link} target="_blank"
                   key={project.title}
-                  className="group border border-gray-800 shadow-md hover:shadow-lg shadow-blue-300/60 hover:border-blue-700 hover:shadow-blue-500/60 rounded-lg p-4 bg-gray-900/30 transition-all duration-300"
+                  className="group border md:flex gap-6 border-gray-800 shadow-md hover:shadow-lg shadow-blue-300/60 hover:border-blue-700 hover:shadow-blue-500/60 rounded-lg p-4 bg-gray-900/30 transition-all duration-300"
                 >
                   {/* Video Section */}
                   <div className="relative mb-4">
@@ -584,11 +584,11 @@ export default function Home() {
                       autoPlay
                       muted
                       playsInline
-                      className="w-full h-48 rounded-md object-cover group-hover:ring-2 hover:scale-105 ring-blue-500/30 transition-all"
+                      className=" lg:max-w-xl  rounded-md object-cover group-hover:ring-2 hover:scale-105 ring-blue-500/30 transition-all"
                     />
                   </div>
 
-                  {/* Project Details */}
+                  <div>
                   <div className="flex justify-between">
                     <h3 className="text-2xl font-semibold text-gray-100 group-hover:text-blue-400 transition-colors">
                       {project.title}
@@ -598,8 +598,6 @@ export default function Home() {
 
                   <p className="text-gray-400 mt-2 font-sans font-extralight text-sm">{project.description}</p>
 
-
-                  {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2 mt-3">
                     {project.techUsed.split(',').map((tech, index) => (
                       <span
@@ -611,7 +609,6 @@ export default function Home() {
                     ))}
                   </div>
 
-                  {/* Links */}
                   <div className="flex items-center justify-end gap-6 mt-4">
                     <a
                       href={project.link}
@@ -630,6 +627,7 @@ export default function Home() {
                       <Github className="w-4 h-8 text-white" />
                       <p className="px-1 py-2"> GitHub</p>
                     </a>
+                  </div>
                   </div>
                 </a>
               ))}
