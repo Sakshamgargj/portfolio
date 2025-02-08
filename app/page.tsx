@@ -210,8 +210,9 @@ export default function Home() {
           transition={{ duration: 2 }}
           className="relative min-h-screen w-full bg-dark-purple overflow-hidden"
         >
+           {/*
           <HackerScrollEffects />
-          {/* rest of your content */}
+          rest of your content */}
           <div
             className="top-0 left-0 w-full h-full overflow-hidden"
             style={{ animation: "scrolling-text 20s linear infinite" }}
