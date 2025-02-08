@@ -374,14 +374,14 @@ export default function Home() {
           </motion.div>
 
           <div className="md:w-3/5 mx-auto px-6 md:px-0 ">
-            {/* <div className="pt-10 justify-end items-center flex underline md:hidden">
-              <Dialog>
+            <div className="pt-10 justify-end items-center flex underline md:hidden">
+              {/* <Dialog>
                 <DialogTrigger>Contact</DialogTrigger>
                 <DialogContent>
                   <InlineWidget url="https://calendly.com/birdsoftware/15min" />
                 </DialogContent>
-              </Dialog>
-            </div> */}
+              </Dialog> */}
+            </div>
 
             <div className="md:flex md:gap-x-10 -mt-12 items-center md:pt-28">
 
