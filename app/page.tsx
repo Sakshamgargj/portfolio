@@ -433,7 +433,7 @@ export default function Home() {
 
             <Element name="resume" className=" lg:px-80  resume center-on-phone">
               <a
-                href="https://drive.google.com/file/d/1ixpSa0ON_YTPXqL4Vuy0o4ZSrGgYusn4/view?usp=drivesdk"
+                href="https://drive.google.com/file/d/1BxPCFyYkluUtfVH54XtQFoHmtWTBd4er/view?usp=drivesdk"
                 className="text-xl resumei rounded-xl flex justify-center p-4 bg-blue-950 text-white/70 font-semibold shadow-lg hover:shadow-xl hover:scale-110 hover:bg-blue-900/80  transform transition-transform duration-300 ease-in-out"
                 target="_blank"
                 rel="noopener noreferrer"
